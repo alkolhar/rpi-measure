@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d14989-0f77-4b1e-a308-7a4b141a6f57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/rpi-measure.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/src/main/java/com/example/rpimeasure/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/src/main/java/com/example/rpimeasure/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/src/main/java/com/example/rpimeasure/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/src/main/java/com/example/rpimeasure/RpiMeasureApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/RpiMeasureApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpi-measure/src/test/java/com/example/rpimeasure/RpiMeasureApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/rpimeasure/RpiMeasureApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpi-measure.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/rpi-measure.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +82,7 @@
       <updated>1665311964663</updated>
       <workItem from="1665311965914" duration="193000" />
       <workItem from="1665318686878" duration="650000" />
-      <workItem from="1665324304862" duration="8740000" />
+      <workItem from="1665324304862" duration="13304000" />
     </task>
     <servers />
   </component>

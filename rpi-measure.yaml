@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: RPI Measurement API
+  title: RPI Measurement
   description: |
     <img src="https://github.com/alkolhar/alkolhar.github.io/blob/master/images/measure.png?raw=true"/><br>
     OpenAPI description of the rpi-measure repository.
@@ -13,7 +13,7 @@ paths:
   /sensors/list:
     get:
       tags:
-        - sensor
+        - Sensor
       summary: Get all existing sensors
       operationId: listSensors
       responses:
@@ -25,28 +25,52 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Sensor'
+  /sensors/add:
+    post:
+      tags:
+        - Sensor
+      summary: Create a new sensor
+      operationId: createSensorById
+      requestBody:
+        description: Create a new sensor in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sensor'
+        required: true
+      responses:
+        200:
+          $ref: '#/components/schemas/Sensor'
+        400:
+          description: Invalid ID supplied
+        405:
+          description: Validation exception
+      security:
+        - sensor_auth:
+            - write:sensor
+            - read:sensor
   /sensors/{id}:
     parameters:
       - $ref: '#/components/parameters/sid'
     get:
       tags:
-        - sensor
+        - Sensor
       summary: Get sensor by id
       operationId: getSensorById
       responses:
         200:
-          $ref: '#/components/responses/resSensor'
+          $ref: '#/components/responses/Sensor'
         400:
           description: Invalid ID supplied
         404:
           description: Sensor not found
     put:
       tags:
-        - sensor
+        - Sensor
       summary: Update sensor by id
       operationId: updateSensorById
       requestBody:
-        description: Update an existent sensor in the database
+        description: Update an existing sensor in the database
         content:
           application/json:
             schema:
@@ -69,62 +93,38 @@ paths:
         - sensor_auth:
             - write:sensor
             - read:sensor
-  /sensors/{id}/actual:
-    get:
+    delete:
       tags:
-        - sensor
-      summary: Get the actual sensor value by id
-      operationId: getSensorValueById
-      parameters:
-        - $ref: '#/components/parameters/sid'
+        - Sensor
+      summary: Deletes a sensor by id
+      operationId: deleteSensorById
+      requestBody:
+        description: Deletes an existing sensor from the database
+        content:
+          application/json:
+            schema:
+              type: integer
+              example: 2
+              minimum: 0
+        required: true
       responses:
         200:
-          $ref: '#/components/responses/resValue'
+          description: Ok
         400:
-          description: Invalid ID supplied
+          description: Invalid Id supplied
         404:
           description: Sensor not found
-  /sensors/{id}/lasthours/{time}:
-    get:
-      tags:
-        - sensor
-      summary: Get all readouts from the sensor in the past x hours
-      operationId: getSensorValueInTime
-      parameters:
-        - $ref: '#/components/parameters/sid'
-        - $ref: '#/components/parameters/time'
-      responses:
-        200:
-          description: Ok
-          content:
-            application/json:
-              schema:
-                type: array
-                minItems: 0
-                maxItems: 50
-                items:
-                  $ref: '#/components/schemas/SensorValue'
-  /sensors/{id}/average/{time}:
-    get:
-      tags:
-        - sensor
-      summary: Get an average readout from the sensor in the past x hours
-      operationId: getSensorAvgInTime
-      parameters:
-        - $ref: '#/components/parameters/sid'
-        - $ref: '#/components/parameters/time'
-      responses:
-        200:
-          description: Ok
-          content:
-            application/json:
-              schema:
-                type: number
+        405:
+          description: Validation exception
+      security:
+        - sensor_auth:
+            - write:sensor
+            - read:sensor
   /sensors/{id}/uploadImage:
     post:
       tags:
-        - sensor
-      summary: uploads an image
+        - Sensor
+      summary: Uploads an image to a specific sensor by id
       description: Upload an image to visualize the sensor
       operationId: uploadImg
       parameters:
@@ -147,10 +147,106 @@ paths:
         - sensor_auth:
             - write:sensor
             - read:sensor
+  /sensors/{id}/actual:
+    get:
+      tags:
+        - Sensor value
+      summary: Get the actual sensor value by id
+      operationId: getSensorValueById
+      parameters:
+        - $ref: '#/components/parameters/sid'
+      responses:
+        200:
+          $ref: '#/components/responses/resValue'
+        400:
+          description: Invalid ID supplied
+        404:
+          description: Sensor not found
+  /sensors/{id}/summary:
+    get:
+      tags:
+        - Sensor value
+      summary: Get a summary from the sensor
+      operationId: getSensorSummaryById
+      parameters:
+        - $ref: '#/components/parameters/sid'
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  min:
+                    type: number
+                    description: Lowest recorded measurement
+                    example: -4.8
+                  max:
+                    type: number
+                    description: Highest recorded measurement
+                    example: 27.9
+                  avg:
+                    type: number
+                    description: Average value of all measurements
+                    example: 24.2
+                  count:
+                    type: integer
+                    description: Number of measurements in the database
+                    example: 127
+                  unit:
+                    type: string
+                    description: Measurement unit
+                    example: °C
+                  onTime:
+                    type: string
+                    description: Shows since when the sensor data is available
+                    example: 27.02.22
+        400:
+          description: Invalid ID supplied
+        404:
+          description: Sensor not found
+  /sensors/{id}/lasthours/{time}:
+    get:
+      tags:
+        - Sensor value
+      summary: Get all readouts from the sensor in the past x hours
+      operationId: getSensorValueInTime
+      parameters:
+        - $ref: '#/components/parameters/sid'
+        - $ref: '#/components/parameters/time'
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                minItems: 0
+                maxItems: 50
+                items:
+                  $ref: '#/components/schemas/SensorValue'
+  /sensors/{id}/average/{time}:
+    get:
+      tags:
+        - Sensor value
+      summary: Get an average readout from the sensor in the past x hours
+      operationId: getSensorAvgInTime
+      parameters:
+        - $ref: '#/components/parameters/sid'
+        - $ref: '#/components/parameters/time'
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SensorValue'
+
   /user:
     post:
       tags:
-        - user
+        - User
       summary: Create user
       description: Create a new user. This can only be done by the logged in user.
       operationId: createUser
@@ -170,7 +266,7 @@ paths:
   /user/login/:
     get:
       tags:
-        - user
+        - User
       summary: Logs user into the system
       description: ''
       operationId: loginUser
@@ -210,7 +306,7 @@ paths:
   /user/logout:
     get:
       tags:
-        - user
+        - User
       summary: Logs out current logged in user session
       description: ''
       operationId: logoutUser
@@ -221,7 +317,7 @@ paths:
   /user/{username}:
     get:
       tags:
-        - user
+        - User
       summary: Get user by user name
       description: ''
       operationId: getUserByName
@@ -245,7 +341,7 @@ paths:
           description: User not found
     put:
       tags:
-        - user
+        - User
       summary: Update user
       description: This can only be done by the logged in user.
       operationId: updateUser
@@ -267,7 +363,7 @@ paths:
           description: Ok
     delete:
       tags:
-        - user
+        - User
       summary: Delete user
       description: This can only be done by the logged in user
       operationId: deleteUser
