@@ -5,24 +5,35 @@
     <title>First Spring application</title>
 </head>
 <body>
-<form action="/add" method="post">
-    <p> Let's add a customer</p>
+<div>
+    <form action="/sensors/add" method="post">
+        <p>Add a new sensor</p>
 
-    <div>
-        <label for="firstName">First Name</label>
-        <input name="first" id="firstName" value="Homer">
-    </div>
-    <div>
-        <label for="lastName">Last Name:</label>
-        <input name="last" id="lastName" value="Simpson">
-    </div>
-    <div>
-        <button>Add Customer</button>
-    </div>
-</form>
+        <div>
+            <label for="name">Sensor Name</label>
+            <input name="name" id="name" value="tempBedSensor">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input name="description" id="description" value="Bedroom Temperature Sensor">
+        </div>
+        <div>
+            <label for="unit">Measurement unit:</label>
+            <input name="unit" id="unit" value="°C">
+        </div>
+        <div>
+            <label for="photoUrl">Photo Url:</label>
+            <input name="photoUrl" id="photoUrl" value="https://">
+        </div>
+        <div>
+            <button>Add Sensor</button>
+        </div>
+    </form>
+</div>
 
-<form action="/list" method="get">
-    <button>List Customer</button>
+
+<form action="/sensors/list" method="get">
+    <button>List Sensor Values</button>
 </form>
 </body>
 </html>
