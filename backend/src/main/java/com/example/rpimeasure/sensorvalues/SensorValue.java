@@ -10,7 +10,7 @@ public class SensorValue {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private Integer sensor_id;
+    private Integer sensorId;
     private LocalDateTime timestamp;
     private Double value;
 
@@ -18,21 +18,17 @@ public class SensorValue {
         return id;
     }
 
-    public Integer getSensor_id() {
-        return sensor_id;
+    public Integer getSensorId() {
+        return sensorId;
     }
 
-    public void setSensor_id(Integer sensor_id) {
-        this.sensor_id = sensor_id;
+    public void setSensorId(Integer sensor_id) {
+        this.sensorId = sensor_id;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
+    public LocalDateTime getTimestamp() { return timestamp; }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
+    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 
     public Double getValue() {
         return value;

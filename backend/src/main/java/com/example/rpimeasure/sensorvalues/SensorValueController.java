@@ -14,8 +14,13 @@ public class SensorValueController {
     @Autowired
     private SensorValueRepository sensorValueRepository;
 
-    @GetMapping("{id}/actual")
-    public Optional<SensorValue> getSensorValueById(@PathVariable Integer id) {
-        return sensorValueRepository.findById(id);
+    @GetMapping("{sensorId}/actual")
+    public Optional<SensorValue> getLatestSensorValueById(@PathVariable Integer sensorId) {
+        return sensorValueRepository.findTopBySensorIdOrderByIdDesc(sensorId);
+    }
+
+    @GetMapping("{sensorId}/count")
+    public Long getValueCount(@PathVariable Integer sensorId) {
+        return sensorValueRepository.countBySensorId(sensorId);
     }
 }
