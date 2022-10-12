@@ -17,7 +17,7 @@ public class SensorsController {
         sensors.setUnit(unit);
         sensors.setPhotoUrl(photoUrl);
         sensorsRepository.save(sensors);
-        return "Added new sensor to repo!";
+        return "Added Sensor '" + name + "' to repo!";
     }
 
     @GetMapping("/list")
