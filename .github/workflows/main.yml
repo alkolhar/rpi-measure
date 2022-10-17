@@ -15,7 +15,7 @@ jobs:
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-build-${{ github.sha }}
-          resore-keys: |
+          restore-keys: |
             ${{ runner.os }}-buildx-
     
       - name: Check Out Repo
