@@ -21,7 +21,7 @@ public class SensorsController {
     }
 
     @GetMapping("/list")
-    public Iterable<Sensors> getSensors() { return sensorsRepository.findAll(); }
+    public Iterable<Sensors> getSensors() { return sensorsRepository.findAllByOrderByIdAsc(); }
 
     @GetMapping("/{id}")
     public Sensors findSensorById(@PathVariable Integer id) {
