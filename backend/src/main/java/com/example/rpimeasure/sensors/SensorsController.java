@@ -1,30 +1,31 @@
 package com.example.rpimeasure.sensors;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/sensors")
-public class SensorsController {
-    @Autowired
-    private SensorsRepository sensorsRepository;
+import java.util.List;
 
-    @PostMapping("/add")
-    public String addSensor(@RequestParam String name, @RequestParam String description, @RequestParam String unit, @RequestParam String photoUrl) {
-        Sensors sensors = new Sensors();
-        sensors.setName(name);
-        sensors.setDescription(description);
-        sensors.setUnit(unit);
-        sensors.setPhotoUrl(photoUrl);
-        sensorsRepository.save(sensors);
-        return "Added Sensor '" + name + "' to repo!";
+@Controller
+@RequestMapping("/api/v1/sensors")
+public class SensorsController {
+    private final SensorService sensorService;
+
+    public SensorsController(SensorService sensorService) {
+        this.sensorService = sensorService;
     }
 
-    @GetMapping("/list")
-    public Iterable<Sensors> getSensors() { return sensorsRepository.findAllByOrderByIdAsc(); }
+    @PostMapping("/add")
+    public void addSensor(@RequestBody Sensors sensor) {
+        sensorService.addNewSensor(sensor);
+    }
+
+    @GetMapping()
+    public List<Sensors> getSensors() {
+        return sensorService.getSensors();
+    }
 
     @GetMapping("/{id}")
     public Sensors findSensorById(@PathVariable Integer id) {
-        return sensorsRepository.findSensorsById(id);
+        return sensorService.findSensorsById(id);
     }
 }
