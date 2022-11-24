@@ -14,7 +14,7 @@ spec:
         app: rpi-measure
     spec:
       containers:
-      - image: https://hub.docker.com/r/alkolhar/rpi-measure
-        name: rpi-measure:latest
+      - image: alkolhar/rpi-measure:latest
+        name: rpi-measure
         ports:
         - containerPort: 80
