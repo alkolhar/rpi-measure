@@ -1,5 +1,7 @@
 package com.example.rpimeasure.sensors;
 
+import com.example.rpimeasure.exceptions.ResourceNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,16 +10,13 @@ import java.util.List;
 public class SensorService {
     private final SensorsRepository sensorsRepository;
 
+    @Autowired
     public SensorService(SensorsRepository sensorsRepository) {
         this.sensorsRepository = sensorsRepository;
     }
 
-    public void addNewSensor(Sensors sensor) {
-        sensorsRepository
-                .findById(sensor.getId())
-                .orElseThrow(() -> new IllegalStateException("Sensor already exists!"));
-
-        sensorsRepository.save(sensor);
+    public Sensors addNewSensor(Sensors sensor) {
+        return sensorsRepository.save(sensor);
     }
 
     public List<Sensors> getSensors() {
@@ -27,6 +26,14 @@ public class SensorService {
     public Sensors findSensorsById(Integer id) {
         return sensorsRepository
                 .findById(id)
-                .orElseThrow(() -> new IllegalStateException("Sensor with id: " + id + " does not exist!"));
+                .orElseThrow(() -> new ResourceNotFoundException("Sensor with id: " + id + " does not exist!"));
+    }
+
+    public boolean deleteSensor(Integer id) {
+        boolean sensorExists = sensorsRepository.existsById(id);
+        if (sensorExists) {
+            sensorsRepository.deleteById(id);
+        }
+        return sensorExists;
     }
 }

@@ -1,31 +1,39 @@
 package com.example.rpimeasure.sensors;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/v1/sensors")
 public class SensorsController {
     private final SensorService sensorService;
 
+    @Autowired
     public SensorsController(SensorService sensorService) {
         this.sensorService = sensorService;
     }
 
     @PostMapping("/add")
-    public void addSensor(@RequestBody Sensors sensor) {
-        sensorService.addNewSensor(sensor);
+    public ResponseEntity<Sensors> addSensor(@RequestBody Sensors sensor) {
+        return new ResponseEntity<>(sensorService.addNewSensor(sensor), HttpStatus.CREATED);
     }
 
     @GetMapping()
-    public List<Sensors> getSensors() {
-        return sensorService.getSensors();
+    public ResponseEntity<List<Sensors>> getSensors() {
+        return new ResponseEntity<>(sensorService.getSensors(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Sensors findSensorById(@PathVariable Integer id) {
-        return sensorService.findSensorsById(id);
+    public ResponseEntity<Sensors> findSensorById(@PathVariable Integer id) {
+        return new ResponseEntity<>(sensorService.findSensorsById(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Boolean> deleteSensorById(@PathVariable Integer id) {
+        return new ResponseEntity<>(sensorService.deleteSensor(id), HttpStatus.ACCEPTED);
     }
 }

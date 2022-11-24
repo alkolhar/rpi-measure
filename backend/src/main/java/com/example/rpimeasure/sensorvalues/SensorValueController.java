@@ -1,39 +1,46 @@
 package com.example.rpimeasure.sensorvalues;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/sensors")
 public class SensorValueController {
-    private final SensorValueRepository sensorValueRepository;
+    private final SensorValueService sensorValueService;
 
-    public SensorValueController(SensorValueRepository sensorValueRepository) {
-        this.sensorValueRepository = sensorValueRepository;
+    public SensorValueController(SensorValueService sensorValueService) {
+        this.sensorValueService = sensorValueService;
     }
 
     @GetMapping("/{sensorId}/actual")
-    public Optional<SensorValue> getLatestSensorValueById(@PathVariable Integer sensorId) {
-        return sensorValueRepository.findTopBySensorIdOrderByIdDesc(sensorId);
+    public ResponseEntity<SensorValue> getLatestSensorValueById(@PathVariable Integer sensorId) {
+        return new ResponseEntity<>(sensorValueService.getLatestSensorValueById(sensorId), HttpStatus.OK);
+    }
+
+    @GetMapping("/{sensorId}/last")
+    public ResponseEntity<List<SensorValue>> getLatestSensorValuesById(@PathVariable Integer sensorId) {
+        return new ResponseEntity<>(sensorValueService.getLatest100SensorValuesById(sensorId), HttpStatus.OK);
     }
 
     @GetMapping("/{sensorId}/count")
-    public Long getValueCount(@PathVariable Integer sensorId) {
-        return sensorValueRepository.countBySensorId(sensorId);
+    public ResponseEntity<Long> getValueCount(@PathVariable Integer sensorId) {
+        return new ResponseEntity<>(sensorValueService.getSensorValueCountById(sensorId), HttpStatus.OK);
     }
 
     @GetMapping("/{sensorId}/max")
-    public Optional<SensorValue> getMaxValueOfSensor(@PathVariable Integer sensorId) {
-        return sensorValueRepository.findById(sensorId);
+    public ResponseEntity<SensorValue> getMaxValueOfSensor(@PathVariable Integer sensorId) {
+        return new ResponseEntity<>(sensorValueService.getMaxValueOfSensor(sensorId), HttpStatus.OK);
     }
 
     @GetMapping("/{sensorId}/min")
-    public Long getMinValueOfSensor(@PathVariable Integer sensorId) {
-        return sensorValueRepository.countBySensorId(sensorId);
+    public ResponseEntity<SensorValue> getMinValueOfSensor(@PathVariable Integer sensorId) {
+        return new ResponseEntity<>(sensorValueService.getMinValueOfSensor(sensorId), HttpStatus.OK);
     }
 
 }

@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="08d14989-0f77-4b1e-a308-7a4b141a6f57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/RpiMeasureApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/RpiMeasureApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/Sensors.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/Sensors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/rpimeasure/sensors/SensorsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/rpimeasure/sensors/SensorsControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,7 @@
       <list>
         <option value="OpenAPI" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -39,9 +46,12 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="minikube" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,43 +63,68 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2FtWfeNfrjWL7qD3VqKlkSphU3b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Repositories/rpi-measure/backend&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.com.haulmont.jpb.tools&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;ed8b2efa600bd8bd77130f3593408b16&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "E:/Repositories/rpi-measure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "ed8b2efa600bd8bd77130f3593408b16"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;,
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite",
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JAVA&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.rpimeasure.sensors" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.rpimeasure.sensors" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.RpiMeasureApplication">
-    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+    <configuration name="RpiMeasureApplication | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/RpiMeasureApplication.http" index="7" requestIdentifier="#7" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
@@ -98,9 +133,34 @@
     <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Scratch" />
-      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+    <configuration name="SensorsControllerTest.shouldCreateAndDeleteSensor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpi-measure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.rpimeasure.sensors.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.rpimeasure.sensors" />
+      <option name="MAIN_CLASS_NAME" value="com.example.rpimeasure.sensors.SensorsControllerTest" />
+      <option name="METHOD_NAME" value="shouldCreateAndDeleteSensor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SensorsControllerTest.shouldReturnNoSensorFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpi-measure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.rpimeasure.sensors.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.rpimeasure.sensors" />
+      <option name="MAIN_CLASS_NAME" value="com.example.rpimeasure.sensors.SensorsControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturnNoSensorFound" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,22 +239,22 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="HTTP Request.generated-requests | #1" />
-      <item itemvalue="HTTP Request.generated-requests | #2" />
+      <item itemvalue="HTTP Request.RpiMeasureApplication | #7" />
       <item itemvalue="HTTP Request.generated-requests | #3" />
       <item itemvalue="HTTP Request.generated-requests | #4" />
-      <item itemvalue="Java Scratch.Scratch" />
+      <item itemvalue="JUnit.SensorsControllerTest.shouldCreateAndDeleteSensor" />
+      <item itemvalue="JUnit.SensorsControllerTest.shouldReturnNoSensorFound" />
       <item itemvalue="Maven.Unnamed" />
       <item itemvalue="Spring Boot.RpiMeasureApplication" />
       <item itemvalue="Swagger Codegen.rpi-measure.yaml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #1" />
-        <item itemvalue="HTTP Request.generated-requests | #3" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.generated-requests | #4" />
-        <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="HTTP Request.RpiMeasureApplication | #7" />
+        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="JUnit.SensorsControllerTest.shouldCreateAndDeleteSensor" />
+        <item itemvalue="JUnit.SensorsControllerTest.shouldReturnNoSensorFound" />
       </list>
     </recent_temporary>
   </component>
@@ -214,6 +274,23 @@
       <workItem from="1665426294773" duration="667000" />
       <workItem from="1665503271112" duration="2983000" />
       <workItem from="1665562373754" duration="137000" />
+      <workItem from="1667472827146" duration="277000" />
+      <workItem from="1667475132788" duration="2878000" />
+      <workItem from="1667497789205" duration="552000" />
+      <workItem from="1667498356726" duration="96000" />
+      <workItem from="1667986595687" duration="81000" />
+      <workItem from="1668004671280" duration="1639000" />
+      <workItem from="1668013773449" duration="107000" />
+      <workItem from="1668013887652" duration="39000" />
+      <workItem from="1668615483284" duration="336000" />
+      <workItem from="1668617843733" duration="146000" />
+      <workItem from="1669046407673" duration="5030000" />
+      <workItem from="1669145035411" duration="2836000" />
+      <workItem from="1669147963191" duration="1957000" />
+      <workItem from="1669298625012" duration="1564000" />
+      <workItem from="1669300287768" duration="1683000" />
+      <workItem from="1669302230941" duration="7853000" />
+      <workItem from="1669315698050" duration="979000" />
     </task>
     <servers />
   </component>
@@ -229,6 +306,42 @@
           </value>
         </entry>
       </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/rpimeasure/sensors/SensorsControllerTest.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
+    <option name="sizePresets">
+      <list>
+        <SizePreset>
+          <option name="caption" value="Phone" />
+          <option name="height" value="568" />
+          <option name="width" value="320" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Tablet" />
+          <option name="height" value="1024" />
+          <option name="width" value="768" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Desktop" />
+          <option name="height" value="900" />
+          <option name="width" value="1440" />
+        </SizePreset>
+      </list>
     </option>
   </component>
 </project>

@@ -13,6 +13,17 @@ public class Sensors {
     private String unit;
     private String photoUrl;
 
+    public Sensors(String name, String description, String unit, String photoUrl) {
+        this.name = name;
+        this.description = description;
+        this.unit = unit;
+        this.photoUrl = photoUrl;
+    }
+
+    public Sensors() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -47,5 +58,16 @@ public class Sensors {
 
     public Integer getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Sensors{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", unit='" + unit + '\'' +
+                ", photoUrl='" + photoUrl + '\'' +
+                '}';
     }
 }
