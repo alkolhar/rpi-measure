@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08d14989-0f77-4b1e-a308-7a4b141a6f57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/RpiMeasureApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/RpiMeasureApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/Sensors.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/Sensors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensors/SensorsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/rpimeasure/sensors/SensorsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/rpimeasure/sensors/SensorsControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/rpimeasure/sensorvalues/SensorValueService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +57,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2FtWfeNfrjWL7qD3VqKlkSphU3b" />
   <component name="ProjectViewState">
@@ -82,7 +75,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "E:/Repositories/rpi-measure",
+    "last_opened_file_path": "E:/Repositories/spring-server-generated",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -290,7 +283,7 @@
       <workItem from="1669298625012" duration="1564000" />
       <workItem from="1669300287768" duration="1683000" />
       <workItem from="1669302230941" duration="7853000" />
-      <workItem from="1669315698050" duration="979000" />
+      <workItem from="1669315698050" duration="3506000" />
     </task>
     <servers />
   </component>
