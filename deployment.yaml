@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rpi-measure
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: rpi-measure
+  template:
+    metadata:
+      labels:
+        app: rpi-measure
+    spec:
+      containers:
+      - image: https://hub.docker.com/r/alkolhar/rpi-measure
+        name: rpi-measure:latest
+        ports:
+        - containerPort: 80
