@@ -24,8 +24,8 @@ public class SensorValueController {
     }
 
     @GetMapping("/{sensorId}/last")
-    public ResponseEntity<List<SensorValue>> getLatestSensorValuesById(@PathVariable Integer sensorId) {
-        return new ResponseEntity<>(sensorValueService.getLatest100SensorValuesById(sensorId), HttpStatus.OK);
+    public ResponseEntity<List<Double>> getLatestSensorValuesById(@PathVariable Integer sensorId) {
+        return new ResponseEntity<>(sensorValueService.getLatestSensorValuesById(sensorId), HttpStatus.OK);
     }
 
     @GetMapping("/{sensorId}/count")
@@ -43,4 +43,8 @@ public class SensorValueController {
         return new ResponseEntity<>(sensorValueService.getMinValueOfSensor(sensorId), HttpStatus.OK);
     }
 
+    @GetMapping("/{sensorId}/average")
+    public ResponseEntity<Double> getAverageValueOfSensor(@PathVariable Integer sensorId) {
+        return new ResponseEntity<>(sensorValueService.getAverageValueOfSensorById(sensorId), HttpStatus.OK);
+    }
 }

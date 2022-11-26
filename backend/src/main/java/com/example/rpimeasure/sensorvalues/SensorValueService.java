@@ -18,8 +18,8 @@ public class SensorValueService {
                 .orElseThrow(() -> new ResourceNotFoundException("No value found for sensor id: " + sensorId));
     }
 
-    public List<SensorValue> getLatest100SensorValuesById(Integer sensorId) {
-        return sensorValueRepository.findTop100BySensorIdOrderByIdDesc(sensorId)
+    public List<Double> getLatestSensorValuesById(Integer sensorId) {
+        return sensorValueRepository.findValuesBySensorIdOrderByTimestampDesc(sensorId)
                 .orElseThrow(() -> new ResourceNotFoundException("No value found for sensor id: " + sensorId));
     }
 
@@ -33,6 +33,13 @@ public class SensorValueService {
     public SensorValue getMinValueOfSensor(Integer sensorId) {
         return sensorValueRepository.findTopBySensorIdOrderByValueAsc(sensorId)
                 .orElseThrow(() -> new ResourceNotFoundException("No minimum value found for sensor id: " + sensorId));
+    }
+
+    public Double getAverageValueOfSensorById(Integer sensorId) {
+        return sensorValueRepository.findById(sensorId).stream().
+                mapToDouble(SensorValue::getValue)
+                .average()
+                .orElseThrow(() -> new ResourceNotFoundException("No average value found for sensor id: " + sensorId));
     }
 
     public Long getSensorValueCountById(Integer sensorId) {
