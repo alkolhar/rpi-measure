@@ -1,0 +1,44 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+    <!--Mini Cards-->
+    <mat-grid-tile *ngFor="let i of [1, 2, 3, 4]" [colspan]="( cardLayout | async )?.miniCard?.cols"
+                   [rowspan]="( cardLayout | async )?.miniCard?.rows">
+      <app-card title="Card {{i}}">
+        <div>Mini Card</div>
+      </app-card>
+    </mat-grid-tile>
+    <!--Charts-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols"
+                   [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Temperature Graph">
+        <app-temp-line-chart></app-temp-line-chart>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols"
+                   [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Humidity Graph">
+        <app-humidity-line-chart></app-humidity-line-chart>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols"
+                   [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Pressure Graph">
+        <app-pressure-line-chart></app-pressure-line-chart>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols"
+                   [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Summary Box Plot">
+        <app-summary-box-plot></app-summary-box-plot>
+      </app-card>
+    </mat-grid-tile>
+    <!--Table-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table?.cols"
+                   [rowspan]="( cardLayout | async )?.table?.rows">
+      <app-card title="Values Table">
+        <app-values-table></app-values-table>
+      </app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
