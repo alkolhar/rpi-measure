@@ -1,4 +1,4 @@
-package com.example.rpimeasure.sensorvalues;
+package com.example.rpimeasure.sensorvalue;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +18,12 @@ public class SensorValueController {
         this.sensorValueService = sensorValueService;
     }
 
+    /**
+     * Mapping for getting the actual value of a sensor
+     *
+     * @param sensorId ID of the sensor in the database
+     * @return ResponseEntity with the SensorValue object and HTTP status
+     */
     @GetMapping("/{sensorId}/actual")
     public ResponseEntity<SensorValue> getLatestSensorValueById(@PathVariable Integer sensorId) {
         return new ResponseEntity<>(sensorValueService.getLatestSensorValueById(sensorId), HttpStatus.OK);

@@ -17,4 +17,18 @@ spec:
       - image: alkolhar/rpi-measure:latest
         name: rpi-measure
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+---
+# Service YAML definition
+apiVersion: v1
+kind: Service
+metadata:
+  name: rpi-measure
+spec:
+  selector:
+      app: rpi-measure
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer

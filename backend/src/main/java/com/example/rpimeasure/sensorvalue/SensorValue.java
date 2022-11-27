@@ -1,6 +1,7 @@
-package com.example.rpimeasure.sensorvalues;
+package com.example.rpimeasure.sensorvalue;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity

@@ -1,10 +1,11 @@
 package com.example.rpimeasure.sensors;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "sensors")
 public class Sensors {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -22,6 +23,10 @@ public class Sensors {
 
     public Sensors() {
 
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getName() {
@@ -56,14 +61,10 @@ public class Sensors {
         this.photoUrl = photoUrl;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
     @Override
     public String toString() {
-        return "Sensors{" +
-                "id=" + id +
+        return "Sensors {" +
+                " id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", unit='" + unit + '\'' +

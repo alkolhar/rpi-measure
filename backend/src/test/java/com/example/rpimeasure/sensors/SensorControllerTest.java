@@ -21,7 +21,7 @@ class SensorsControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
-    private SensorService sensorService;
+    private SensorsService sensorsService;
 
     @Test
     public void shouldFindPressureBedroomSensor() throws Exception {
@@ -44,7 +44,7 @@ class SensorsControllerTest {
         String testUnit = "unit";
         String testPhotoUrl = "photoUrl";
 
-        Sensors testSensor = sensorService.addNewSensor(
+        Sensors testSensor = sensorsService.addNewSensor(
                 new Sensors(
                         testName,
                         testDescription,
@@ -54,7 +54,7 @@ class SensorsControllerTest {
         );
 
         // check if sensor can be found
-        Sensors sensorsById = sensorService.findSensorsById(testSensor.getId());
+        Sensors sensorsById = sensorsService.findSensorsById(testSensor.getId());
         assertNotNull(sensorsById);
         // check if values have been saved correctly
         assertEquals(sensorsById.getId(), testSensor.getId());
@@ -64,6 +64,6 @@ class SensorsControllerTest {
         assertEquals(sensorsById.getPhotoUrl(), testPhotoUrl);
 
         // check that sensor is removed
-        assertTrue(sensorService.deleteSensor(testSensor.getId()));
+        assertTrue(sensorsService.deleteSensor(testSensor.getId()));
     }
 }

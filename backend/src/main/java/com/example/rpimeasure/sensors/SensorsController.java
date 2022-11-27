@@ -10,30 +10,40 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/sensors")
 public class SensorsController {
-    private final SensorService sensorService;
+    private final SensorsService sensorsService;
 
     @Autowired
-    public SensorsController(SensorService sensorService) {
-        this.sensorService = sensorService;
+    public SensorsController(SensorsService sensorsService) {
+        this.sensorsService = sensorsService;
     }
 
     @PostMapping("/add")
     public ResponseEntity<Sensors> addSensor(@RequestBody Sensors sensor) {
-        return new ResponseEntity<>(sensorService.addNewSensor(sensor), HttpStatus.CREATED);
+        return new ResponseEntity<>(sensorsService.addNewSensor(sensor), HttpStatus.CREATED);
     }
 
     @GetMapping()
     public ResponseEntity<List<Sensors>> getSensors() {
-        return new ResponseEntity<>(sensorService.getSensors(), HttpStatus.OK);
+        return new ResponseEntity<>(sensorsService.getSensors(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Sensors> findSensorById(@PathVariable Integer id) {
-        return new ResponseEntity<>(sensorService.findSensorsById(id), HttpStatus.OK);
+        return new ResponseEntity<>(sensorsService.findSensorsById(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Sensors> updateSensor(@PathVariable Integer id,
+                                                @RequestParam(required = false) String name,
+                                                @RequestParam(required = false) String description,
+                                                @RequestParam(required = false) String unit,
+                                                @RequestParam(required = false) String photoUrl) {
+        return new ResponseEntity<>(sensorsService.updateSensor(id, name, description, unit, photoUrl), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> deleteSensorById(@PathVariable Integer id) {
-        return new ResponseEntity<>(sensorService.deleteSensor(id), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(sensorsService.deleteSensor(id), HttpStatus.ACCEPTED);
     }
 }
+

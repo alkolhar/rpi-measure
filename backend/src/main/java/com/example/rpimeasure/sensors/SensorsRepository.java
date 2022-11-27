@@ -8,3 +8,4 @@ public interface SensorsRepository extends CrudRepository<Sensors, Integer> {
 
     List<Sensors> findAllByOrderByIdAsc();
 }
+
